@@ -1,7 +1,7 @@
 'use strict';
 
 const PARAM_REGEX = /(\?|\&)(\w+=([\d]+))/;
-const LISTENED_MOUSE_BTN = 2;
+const LISTENED_MOUSE_BTN = 4;
 
 function digits(number, count = 1) {
     return number >= 10 ? digits(number / 10, count + 1) : count;
@@ -17,6 +17,8 @@ function main() {
             const match = window.location.href.match(PARAM_REGEX);
             if (match) {
                 window.location = nextPageUrl(match);
+            } else {
+                console.info('[next-page-script] no page param found', window.location.href);
             }
         }
     });
