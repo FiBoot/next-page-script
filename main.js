@@ -4,7 +4,7 @@ const PARAM_REGEX = /(\?|\&)(\w+=([\d]+))/;
 const LISTENED_MOUSE_BTN = 5;
 
 function digits(number, count = 1) {
-    return number >= 10 ? digits(number / 10, count + 1) : count;
+    return number >= 10 ? digits(Math.round((number / 10), count + 1) : count;
 }
 
 function nextPageUrl([full, sign, param, result]) {
